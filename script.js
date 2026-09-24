@@ -26,3 +26,34 @@ btnTexto.addEventListener('click', function(){
 btnCor.addEventListener('click', function(){
     paragrafo.style.color = "purple"
 })
+
+btnFundo.addEventListener('click', function(){
+    caixa.style.backgroundColor = "#af459d"
+})
+
+btnDestaque.addEventListener('click', function(){
+    caixa.classList.toggle('destaque')
+})
+
+btnFonte.addEventListener('click', function(){
+    titulo.style.fontSize = "40px"
+    paragrafo.style.fontSize = "20px"
+    paragrafo.style.fontWeight = "bold"
+})
+
+btnAdicionar.addEventListener('click', function(){
+    const itemNovo = document.createElement('li')
+    itemNovo.textContent = 'Item ' + (lista.children.length + 1)
+    lista.appendChild(itemNovo)
+})
+
+btnRemover.addEventListener('click', function(){
+    if(lista.lastElementChild){
+        lista.lastElementChild.remove()
+    }
+})
+let cliques = 0
+btnContador.addEventListener('click', function(){
+    cliques = cliques + 1
+    contadorTexto.textContent = cliques
+})
